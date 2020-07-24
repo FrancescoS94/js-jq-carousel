@@ -18,6 +18,23 @@ $(document).ready(function(){
         nextImage();
     });
 
+    // Click nei vari pallini.
+    $(".nav i").click(
+        function() {
+            // Trovo la posizione del pallino cliccato.
+            var posizione = $(this).index();
+
+            // Rimuovere la classe active.
+            $(".images img").removeClass("active");
+            // Dare la classe active all'elemento con l'indice trovato attraverso il metodo eq().
+            $(".images img").eq(posizione).addClass("active");
+            // Rimuovere la classe active a tutti i pallini.
+            $(".nav i").removeClass("active");
+            // Dare la classe al pallino con l'indice trovato attraverso il metodo eq().
+            $(".nav i").eq(posizione).addClass("active");
+        }
+    );
+
     // *FUNZIONI*
 
     // Funzione Next.
